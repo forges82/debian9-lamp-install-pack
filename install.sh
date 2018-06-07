@@ -9,6 +9,9 @@ apt install php-common libapache2-mod-php php-cli -y
 apt install php-pear php-mysql -y
 apt-get install unzip php-mcrypt php-gd -y
 
+mysql -uroot -p -e "update mysql.user set plugin=null where user='root';"
+mysql -uroot -p -e "FLUSH PRIVILEGES";
+
 apt-get install proftpd -y
 
 a2enmod rewrite
